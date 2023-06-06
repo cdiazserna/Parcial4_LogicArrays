@@ -21,6 +21,12 @@ namespace Punto1Arrays
                 numero = Convert.ToInt32(Console.ReadLine());
 
                 
+
+                Console.WriteLine("¿Desea ingresar otro array y número? (S/N)");
+                respuesta = Console.ReadLine();
+
+                if (respuesta.ToUpper() == "N")
+                    exit = true;
             }
         }
     }
