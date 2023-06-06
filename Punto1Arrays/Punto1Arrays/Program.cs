@@ -39,8 +39,14 @@ namespace Punto1Arrays
             }
         }
 
-
-    }
+        static void MostrarMultiplos(int[] array)
+        {
+            Console.WriteLine("Los múltiplos son:");
+            foreach (int num in array)
+            {
+                Console.WriteLine(num);
+            }
+        }
 }
     
         
