@@ -28,7 +28,7 @@ namespace Punto1Arrays
 
                 if (respuesta.ToUpper() == "N")
                     exit = true;
-            }
+            } 
         }
 
         static void RellenarArrayMultiplos(int[] array, int numero)
