@@ -18,6 +18,10 @@ namespace Punto1Arrays
                 Console.WriteLine("Ingrese un número para calcular sus múltiplos: ");
                 int numero = Convert.ToInt32(Console.ReadLine());
 
+
+                RellenarArray(array, numero);//referenciamos los metodos
+                MostrarMultiplos(array);
+
                 // creamos la opcion para continuar
                 Console.WriteLine("¿Desea continuar? (S/N)");
                 string opcion = Console.ReadLine().ToUpper();//aseguramos  que siempre se convierta a mayusculas
