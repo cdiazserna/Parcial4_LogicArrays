@@ -6,7 +6,7 @@ namespace Punto1Arrays
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello");
         }
     }
 }
