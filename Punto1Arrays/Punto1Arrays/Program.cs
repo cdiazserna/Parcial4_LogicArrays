@@ -5,7 +5,13 @@ namespace Punto1Arrays
     internal class Program
     {
         static void Main(string[] args)
-        {
+        {// utilizamos le condicional while
+            while () ;
+            {
+
+
+
+            }
             Console.WriteLine("Hello World!");
         }
     }
