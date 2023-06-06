@@ -6,7 +6,18 @@ namespace Punto1Arrays
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int menu = 1;
+
+            while (menu==1)
+            {
+
+            }
+
+        }
+
+        static void CompletarElArray (int[] array, int num)
+        {
+
         }
     }
 }
