@@ -5,11 +5,27 @@ namespace Punto1Arrays
     internal class Program
     {
         static void Main(string[] args)
-        {// utilizamos le condicional while
-            while () ;
+        {// utilizamos le condicional while luego definimos el trigger del while
+
+            bool continu = true;
+            // definimos la variable boleana para activar la condicion, la inicializamos en true
+            while (continu) ;
+            
             {
+                Console.WriteLine("Ingrese el tamaño del array: ");//pedimos los datos al usuario
+                int tamaño = Convert.ToInt32(Console.ReadLine());
+                int[] array = new int[tamaño];//Creamos el array pero lo ato al valor ingresado por el usuario
+                Console.WriteLine("Ingrese un número para calcular sus múltiplos: ");
+                int numero = Convert.ToInt32(Console.ReadLine());
 
+                // creamos la opcion para continuar
+                Console.WriteLine("¿Desea continuar? (S/N)");
+                string opcion = Console.ReadLine().ToUpper();//aseguramos  que siempre se convierta a mayusculas
 
+                if (opcion == "N")//Condicional para enviar a while
+                {
+                    continu = false;
+                }
 
             }
             Console.WriteLine("Hello World!");
