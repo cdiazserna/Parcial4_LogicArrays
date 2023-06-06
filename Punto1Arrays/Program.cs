@@ -21,8 +21,12 @@ namespace Punto1Arrays
 
                 CompletarElArray (array, multpnum);
                 Multiplos (array);
-            }
 
+                Console.WriteLine("Presione 1 para volver a realizar la operación o 0 para salir");
+                menu = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+            }
+            
         }
 
         static void CompletarElArray (int[] array, int num)
