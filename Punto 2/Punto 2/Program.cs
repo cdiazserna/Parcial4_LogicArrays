@@ -60,7 +60,7 @@ namespace Punto_2
             }
             if (ban)
             {
-                Console.WriteLine("array: " + palabraSecreta);
+                Console.WriteLine("Ha ganado");
             }
 
             else
