@@ -4,10 +4,10 @@ namespace Punto2Arrays
 {
     public class Punto2Arrays
     {
-        string[] listWords = { "Perro", "Gato", "Cocodrilo", "Guepardo", "Gorilla", "Delfin", "Murcielago", "Mapache", "Escarabajo", "Jirafa" };
+        static string[] listWords = { "Perro", "Gato", "Cocodrilo", "Guepardo", "Gorilla", "Delfin", "Murcielago", "Mapache", "Escarabajo", "Jirafa" };
         Random random = new Random();
-        char[] palabraAleatoria;
-        int cartuchosRestantes;
+        static char[] palabraAleatoria;
+        static int cartuchosRestantes;
         static void Main(string[] args)
         {
             //string randomWord = listWords[random.Next(listWords.Length)];
