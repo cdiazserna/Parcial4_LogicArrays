@@ -6,17 +6,17 @@ namespace Punto2Arrays
     {
         string[] listWords = { "Perro", "Gato", "Cocodrilo", "Guepardo", "Gorilla", "Delfin", "Murcielago", "Mapache", "Escarabajo", "Jirafa" };
         Random random = new Random();
-        
-        
-        //string randomWord = listWords[random.Next(listWords.Length)];
+        char[] palabraAleatoria;
+        int cartuchosRestantes;
         static void Main(string[] args)
         {
-            
+            //string randomWord = listWords[random.Next(listWords.Length)];
+
             bool jugarDeNuevo = true;
 
             while (jugarDeNuevo)
             {
-               
+                SeleccionarPalabraAleatoria();
                 Console.WriteLine("¿Quieres jugar de nuevo? (s/n): ");
                 char opcion = Console.ReadKey().KeyChar;
                 Console.WriteLine();
@@ -25,4 +25,18 @@ namespace Punto2Arrays
 
             }
         }
+        static void SeleccionarPalabraAleatoria()
+        {
+            Random rnd = new Random();
+            int indiceAleatorio = rnd.Next(0, listWords.Length);
+            palabraAleatoria = listWords[indiceAleatorio].ToCharArray();
+        }
+
+        static void InicializarJuego()
+        {
+            cartuchosRestantes = 5;
+        }
+
+
+    }
 }
