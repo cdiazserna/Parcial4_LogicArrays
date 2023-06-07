@@ -19,13 +19,18 @@ namespace Punto2
                 hiddenWord[i] = '_';
             }
 
-            while ()
+            int attempts = 5;
+            bool guessed = false;
+
+            while (attempts > 0 & guessed)
 
             {
                 Console.WriteLine();
                 Console.WriteLine("Palabra: " + new string(hiddenWord));
 
+                char letter = GuessWord();
                 bool letterfound = false;
+
                 for (int i = 0; i < randomWord.Length; i++)
                 {
                 
@@ -35,15 +40,30 @@ namespace Punto2
                         letterfound = true;
                     }
                 }
+
+                if (letterfound)
+                {
+                    if (new string(hiddenWord) == randomWord)
+
+                        guessed = true;                
+                }
+
+                else
+                { 
+                 
+                    attempts--;
+                    Console.WriteLine("Te quedan" + attempts + "intentos");
+
+                }
             }
         }
 
-        static void GuessWord()
+        static char GuessWord()
         {
             Console.WriteLine("Ingresa una letra");
             char letter = Console.ReadKey().KeyChar;
             Console.WriteLine();
-
+            return letter;
         }
 
         static void ShowResult()
