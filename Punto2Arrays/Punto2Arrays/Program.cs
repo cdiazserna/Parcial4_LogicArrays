@@ -42,26 +42,32 @@ namespace Punto2Arrays
                         }
 
                     }
-                    Console.WriteLine("si sabe cual es digita");
-                    rest = Console.ReadLine();
-                    if (rest == randomword)
-                    {
-                        Console.WriteLine(" has ganado ");
-                        sthw = 0;
-                    }
-                    else Console.WriteLine(" no era, sigue intentando");
-
-                    attempts--;
-                    if (attempts == 0)
-                    {
-                        sthw = 0;
-                        Console.WriteLine(" haz perdido");
-                    }
+                    KnowWhat(out rest, randomword, out sthw, attempts);
                 }
                 Console.WriteLine(" si deseas jugar otra vez marca 1 o cualquiera para salir");
                 swth=Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
             }
             
+        }
+        public static void KnowWhat(out string rest,string randomword,out int sthw, int attempts)
+        {
+            sthw = 1;
+            Console.WriteLine("si sabe cual es digita");
+            rest = Console.ReadLine();
+            if (rest == randomword)
+            {
+                Console.WriteLine(" has ganado ");
+                sthw = 0;
+            }
+            else Console.WriteLine(" no era, sigue intentando");
+
+            attempts--;
+            if (attempts == 0)
+            {
+                sthw = 0;
+                Console.WriteLine(" haz perdido");
+            }
         }
     }
 }
