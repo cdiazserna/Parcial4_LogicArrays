@@ -21,10 +21,10 @@ namespace Punto1
                 RellenarArrayConMultiplos(array, numero);
                 MostrarMultiplos(array);
 
-                Console.WriteLine("¿Desea ingresar otro array y número? (s/n)");
+                Console.WriteLine("¿Desea ingresar otro array y número? (y/n)");
                 string respuesta = Console.ReadLine();
 
-                if (respuesta.ToLower() != "s")
+                if (respuesta.ToLower() != "y")
                 {
                     continuar = false;
                 }
