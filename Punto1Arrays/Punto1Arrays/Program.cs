@@ -7,11 +7,11 @@ namespace Punto1Arrays
         static void Main(string[] args)
         {// utilizamos le condicional while luego definimos el trigger del while
 
-            bool continu = true;
+            bool continu=true;
             // definimos la variable boleana para activar la condicion, la inicializamos en true
             while (continu) ;
 
-            {
+            
                 Console.WriteLine("Ingrese el tamaño del array: ");//pedimos los datos al usuario
                 int tamaño = Convert.ToInt32(Console.ReadLine());
                 int[] array = new int[tamaño];//Creamos el array pero lo ato al valor ingresado por el usuario
@@ -23,17 +23,18 @@ namespace Punto1Arrays
                 MostrarMultiplos(array);
 
                 // creamos la opcion para continuar
-                Console.WriteLine("¿Desea continuar? (S/N)");
-                string opcion = Console.ReadLine().ToUpper();//aseguramos  que siempre se convierta a mayusculas
+                //Console.WriteLine("¿Desea continuar? (S/N)");
+                //string opcion = Console.ReadLine().ToUpper();//aseguramos  que siempre se convierta a mayusculas
 
-                if (opcion == "N")//Condicional para enviar a while
-                {
-                    continu = false;
-                }
+                //if (opcion == "N")//Condicional para enviar a while
+                //{
+                //    continu = false;
+                //}
                 // metodos para mostras  y para rellenar los array
 
 
-            }
+                Console.Clear(); //limpiamos la pantalla
+            
         }
         static void RellenarArray(int[] array, int numero)
         {
@@ -51,6 +52,7 @@ namespace Punto1Arrays
                 Console.WriteLine(num);
             }
         }
+    }
 }
     
         
