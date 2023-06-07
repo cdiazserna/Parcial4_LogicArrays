@@ -53,12 +53,17 @@ namespace Punto_2
         }
 
 
-        static void eliminar(int[] list)
+        static void eliminar(char[] list,char attempt)
         {
+            int j = 0;
 
             foreach( char c in list)
             {
-
+                if (c == attempt)
+                {
+                    list[j] = ' ';
+                    j++;
+                }
             }
         }
     }
