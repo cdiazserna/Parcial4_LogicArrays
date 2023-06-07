@@ -7,16 +7,35 @@ namespace Punto_2
     {
         static void Main(string[] args)
         {
-            string[] listWord = { "Superman", "Batman", "Spider-Man", "Wonder Woman", "Iron-Man", "Captain-America", "Hulk", "Thor", "BlackWidow", "Wolverin" };
+            int i = 0;
+            string[] listWord = { "superman", "batman", "aquaman", "deadpool", "flash", "daredevil", "hulk", "thor", "blackWidow", "wolverin" };
             Random ramdom = new Random();
             int vidas = 5;
             string ramdomWord = listWord[ramdom.Next(listWord.Length)];
+            char[] palabraSecreta = new char[ramdomWord.Length];
+            foreach (char c in  ramdomWord)
+            {
+                palabraSecreta[i] = c;
+                i++;
+            }
             int pos = ramdomWord.Length;
-            Console.WriteLine("La palabra elejida tiene: " + pos + "posiciones");
-            Console.WriteLine("Tiene: " + vidas + "vidas");
-            Console.WriteLine("Ingrese una letra: ");
-            char respuesta = Convert.ToChar(Console.ReadLine()); 
-            int adivinado = validarPalabraAleatoria(ramdomWord, respuesta);
+
+            while (vidas >= 0) {
+
+                Console.WriteLine("La palabra tiene: " + pos + "posiciones");
+                Console.WriteLine("Tiene: " + vidas + "vidas");
+                Console.WriteLine("Ingrese una letra: ");
+                char respuesta = Convert.ToChar(Console.ReadLine());
+                int adivinado = validarPalabraAleatoria(ramdomWord, respuesta);
+
+                if (adivinado == 0)
+                {
+                    Console.WriteLine("No ha acertado");
+                    vidas = vidas - 1;
+                }
+
+            }
+
         }
 
 
@@ -31,6 +50,16 @@ namespace Punto_2
                 }
             }
             return cont;
+        }
+
+
+        static void eliminar(int[] list)
+        {
+
+            foreach( char c in list)
+            {
+
+            }
         }
     }
 }
