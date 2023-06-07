@@ -6,7 +6,17 @@ namespace Punto2Arrays
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string[] listWords = { "rojo", "verde", "amarillo", "azul", "violeta", "naranja", "marron", "negro", "lila", "rosado" };
+            Random random = new Random();
+            string randomWord = listWords[random.Next(listWords.Length)];
+            // almacenamos la paralbra en uun array
+            char[] randomWord = ObtenerLetrasPalabra(palabraAleatoria);
+
+            // utilizamos while como condicional
+            while (true)
+            {
+
+            }
         }
-    }
+    
 }
