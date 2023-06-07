@@ -10,8 +10,8 @@ namespace Punto1Arrays
             bool continu=true;
             // definimos la variable boleana para activar la condicion, la inicializamos en true
             while (continu) ;
+            {
 
-            
                 Console.WriteLine("Ingrese el tamaño del array: ");//pedimos los datos al usuario
                 int tamaño = Convert.ToInt32(Console.ReadLine());
                 int[] array = new int[tamaño];//Creamos el array pero lo ato al valor ingresado por el usuario
@@ -34,7 +34,7 @@ namespace Punto1Arrays
 
 
                 Console.Clear(); //limpiamos la pantalla
-            
+            }
         }
         static void RellenarArray(int[] array, int numero)
         {
