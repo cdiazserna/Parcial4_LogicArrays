@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 
 namespace Punto2Arrays
 {
@@ -8,43 +9,75 @@ namespace Punto2Arrays
         {
             string[] listWords =
             {
-                "tvs, bmw, bajaj, honda, suzuki, akt, hero, yamaha, royalenfild, kawasaki"
+                "tvs", "bmw", "bajaj", "honda", "suzuki", "akt", "hero", "yamaha", "royalenfield", "kawasaki"
             };
 
             Random random= new Random();
 
             string randomWord = listWords[random.Next(listWords.Length)];
 
-            int intentosMaximos = 5;
-            int intentosRealizados = 0;
+            int menu = 1;
+            int intentomaximo = 5;
+            int intentorealizado = 0;
             bool juegoTerminado = false;
 
-            string[] letrasPalabraSecreta = new string[randomWord.Length];
+            string[] randomletter = new string[randomWord.Length];
             for (int i = 0; i < randomWord.Length; i++)
             {
-                letrasPalabraSecreta[i] = randomWord[i].ToString();
+                randomletter[i] = randomWord[i].ToString();
             }
 
-            string[] palabraAdivinada = new string[randomWord.Length];
-            for (int i = 0; i < palabraAdivinada.Length; i++)
+            string[] palabradivinada = new string[randomWord.Length];
+            for (int i = 0; i < palabradivinada.Length; i++)
             {
-                palabraAdivinada[i] = "_";
+                palabradivinada[i] = "_";
             }
 
-            Console.WriteLine("¡Bienvenido al juego del Ahorcado!");
-            while (!juegoTerminado)
+            while (menu ==1)
             {
-                Console.WriteLine("\nPalabra: " + String.Join(" ", palabraAdivinada));
-                Console.WriteLine("Intentos restantes: " + (intentosMaximos - intentosRealizados));
+                Console.WriteLine("Juego del ahorcadito");
+                while (!juegoTerminado)
+                {
+                    Console.WriteLine("\nPalabra: " + String.Join(" ", palabradivinada));
+                    Console.WriteLine("Intentos restantes: " + (intentomaximo - intentorealizado));
 
-                Console.Write("Ingresa una letra: ");
-                string letra = Console.ReadLine().ToLower();
+                    Console.Write("Ingresa una letra: ");
+                    string letra = Console.ReadLine().ToLower();
 
-                
-            }
+                    bool letradivinada = false;
+                    for (int i = 0; i < randomletter.Length; i++)
+                    {
+                        if (randomletter[i] == letra)
+                        {
+                            palabradivinada[i] = letra;
+                            letradivinada = true;
+                        }
+                    }
 
-            Console.WriteLine("\nPresiona cualquier tecla para salir...");
-            Console.ReadKey();
+                    if (!letradivinada)
+                    {
+                        intentorealizado++;
+                        Console.WriteLine("¡Letra incorrecta!");
+                    }
+
+                    if (intentorealizado >= intentomaximo)
+                    {
+                        juegoTerminado = true;
+                        Console.WriteLine("\n Perdiste :C La palabra era: " + randomWord);
+                        Console.WriteLine(" Moriste ahorcado vilmente!!!");
+                    }
+                    else if (String.Join("", palabradivinada) == randomWord)
+                    {
+                        juegoTerminado = true;
+                        Console.WriteLine("\n ADIVINASTE LA PALABRA :D");
+                    }
+                }
+
+                Console.WriteLine("Presiona 1 para volver al menú o 0 para salir de la calculadora");
+                menu = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+
+            }                      
         }
     }
 }
