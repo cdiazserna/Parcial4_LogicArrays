@@ -4,16 +4,19 @@ namespace Punto2Arrays
 {
     public class Punto2Arrays
     {
-        static string[] listWords = { "Perro", "Gato", "Cocodrilo", "Guepardo", "Gorilla", "Delfin", "Murcielago", "Mapache", "Escarabajo", "Jirafa" };
+        static string[] listWords = { "perro", "gato", "cocodrilo", "guepardo", "gorilla", "delfin", "murcielago", "mapache", "escarabajo", "jirafa" };
         static char[] palabraAleatoria;
         static int cartuchosRestantes;
-        static void Main(string[] args)
+        static void Main(string[] arg)
         {
+            
+            Console.WriteLine("¡Bienvenido al juego del ahorcado!");
             bool jugarDeNuevo = true;
-
             while (jugarDeNuevo)
             {
                 SeleccionarPalabraAleatoria();
+                InicializarJuego();
+                Jugar();
                 Console.WriteLine("¿Quieres jugar de nuevo? (s/n): ");
                 char opcion = Console.ReadKey().KeyChar;
                 Console.WriteLine();
@@ -40,7 +43,7 @@ namespace Punto2Arrays
 
             while (cartuchosRestantes > 0 && Array.IndexOf(letrasDescubiertas, false) != -1)
             {
-                Console.WriteLine("Palabra: " + (letrasDescubiertas));
+                Console.WriteLine("Palabra: " + ObtenerEstadoPalabra(letrasDescubiertas));
                 Console.WriteLine("Te quedan " + cartuchosRestantes + " cartuchos para adivinar la palabra.");
                 Console.Write("Ingresa una letra: ");
                 char letra = Console.ReadKey().KeyChar;
@@ -78,6 +81,18 @@ namespace Punto2Arrays
             {
                 Console.WriteLine("¡Has ganado!");
             }
+        }
+
+        static string ObtenerEstadoPalabra(bool[] letrasDescubiertas)
+        {
+            string estado = "";
+
+            for (int i = 0; i < palabraAleatoria.Length; i++)
+            {
+                estado += letrasDescubiertas[i] ? palabraAleatoria[i] + " " : "_ ";
+            }
+
+            return estado.Trim();
         }
 
 
