@@ -8,9 +8,10 @@ namespace Punto2
         static void Main(string[] args)
         {
             bool play = true;
-
+   
             while (play)
             {
+                Console.Clear();
                 string[] listWords = { "perro", "gato", "leon", "cocodrilo", "girafa", "elefante" };
                 Random random = new Random();
                 string randomWord = listWords[random.Next(listWords.Length)];
@@ -27,7 +28,7 @@ namespace Punto2
                 int attempts = 5;
                 bool guessed = false;
 
-                while (attempts > 0 & guessed)
+                while (attempts > 0 && !guessed)
 
                 {
                     Console.WriteLine();
@@ -41,7 +42,7 @@ namespace Punto2
                     for (int i = 0; i < randomWord.Length; i++)
                     {
 
-                        if (randomWord[i] == letter)
+                        if (char.ToLower(randomWord[i]) == char.ToLower(letter))
                         {
                             hiddenWord[i] = letter;
                             letterfound = true;
@@ -50,15 +51,14 @@ namespace Punto2
 
                     if (letterfound)
                     {
-                        if (new string(hiddenWord) == randomWord)
+                        if (new string(hiddenWord).ToLower() == randomWord.ToLower())
 
                             guessed = true;
                     }
-
                     else
                     {
                         attempts--;
-                        Console.WriteLine("Te quedan" + attempts + "intentos");
+                        Console.WriteLine("Te quedan "+ attempts +" intentos");
                     }
                 }
 
@@ -72,12 +72,12 @@ namespace Punto2
                 {
                     play = false;
                 }
-
+                Console.Clear();
                 Console.WriteLine();
-
             }
-        }
 
+        }
+        
 
         static char GuessWord()
         {
@@ -97,6 +97,6 @@ namespace Punto2
             {
                 Console.WriteLine("Has perdido, la palabra era '" + word + "'.");
             }
-        }
+        }  
     }
 }
