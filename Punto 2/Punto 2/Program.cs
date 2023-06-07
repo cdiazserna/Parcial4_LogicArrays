@@ -8,65 +8,79 @@ namespace Punto_2
     {
         static void Main(string[] args)
         {
-            int i = 0;
-            bool ban = false;
-            string[] listWord = { "superman", "batman", "aquaman", "deadpool", "flash", "daredevil", "hulk", "thor", "blackWidow", "wolverin" };
-            Random ramdom = new Random();
-            int vidas = 5;
-            string ramdomWord = listWord[ramdom.Next(listWord.Length)];
-            string letrasAcertadas = "";
-            char[] palabraSecreta = new char[ramdomWord.Length];
-            foreach (char c in  ramdomWord)
+            bool bandera = true;
+            do
             {
-                palabraSecreta[i] = c;
-                i++;
-            }
-            int pos = ramdomWord.Length;
-            int aciertos = 0;
-            while (vidas >= 0) {
-                
-                Console.WriteLine("La palabra tiene: " + pos + " posiciones");
-                Console.WriteLine("Tiene: " + vidas + " vidas");
-                Console.WriteLine("Ingrese una letra: ");
-                char respuesta = Convert.ToChar(Console.ReadLine());
-                int adivinado = validarPalabraAleatoria(ramdomWord, respuesta,palabraSecreta);
 
-                if (adivinado == 0)
+                int i = 0;
+                bool ban = false;
+                string[] listWord = { "superman", "batman", "aquaman", "deadpool", "flash", "daredevil", "hulk", "thor", "blackWidow", "wolverin" };
+                Random ramdom = new Random();
+                int vidas = 5;
+                string ramdomWord = listWord[ramdom.Next(listWord.Length)];
+                string letrasAcertadas = "";
+                char[] palabraSecreta = new char[ramdomWord.Length];
+                foreach (char c in ramdomWord)
                 {
-                    Console.WriteLine("No ha acertado\n");
-                    vidas = vidas - 1;
-                    MostrarPalabraSecreta(ramdomWord, letrasAcertadas);
+                    palabraSecreta[i] = c;
+                    i++;
                 }
+                int pos = ramdomWord.Length;
+                int aciertos = 0;
+                while (vidas >= 0)
+                {
+
+                    Console.WriteLine("La palabra tiene: " + pos + " posiciones");
+                    Console.WriteLine("Tiene: " + vidas + " vidas");
+                    Console.WriteLine("Ingrese una letra: ");
+                    char respuesta = Convert.ToChar(Console.ReadLine());
+                    int adivinado = validarPalabraAleatoria(ramdomWord, respuesta, palabraSecreta);
+
+                    if (adivinado == 0)
+                    {
+                        Console.WriteLine("No ha acertado\n");
+                        vidas = vidas - 1;
+                        MostrarPalabraSecreta(ramdomWord, letrasAcertadas);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ha acertado\n");
+                        aciertos++;
+                        pos = pos - adivinado;
+                        letrasAcertadas += respuesta;
+                        MostrarPalabraSecreta(ramdomWord, letrasAcertadas);
+
+                        if (pos == 0)
+                        {
+
+                            ban = true;
+                            break;
+
+                        }
+                    }
+
+
+
+                }
+                if (ban)
+                {
+                    Console.WriteLine("Ha ganado");
+                }
+
                 else
                 {
-                    Console.WriteLine("Ha acertado\n");
-                    aciertos++;
-                    pos = pos - adivinado;
-                    letrasAcertadas += respuesta;
-                    MostrarPalabraSecreta(ramdomWord, letrasAcertadas);
-
-                    if (pos == 0)
-                    {
-
-                        ban = true;
-                        break;
-                        
-                    }
+                    Console.WriteLine("Ha perdido la palabra era: " + ramdomWord);
                 }
 
-                
 
-            }
-            if (ban)
-            {
-                Console.WriteLine("Ha ganado");
-            }
+                Console.WriteLine("Desea volver a jugar? (y/n)");
+                string volver = Console.ReadLine();
+                if (volver == "n")
+                {
+                    bandera = false;
+                }
+            }while (bandera);
 
-            else
-            {
-                Console.WriteLine("Ha perdido la palabra era: " + ramdomWord);
-                Console.WriteLine("array: " + palabraSecreta);
-            }
 
         }
 
