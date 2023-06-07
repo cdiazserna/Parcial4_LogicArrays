@@ -18,10 +18,31 @@ namespace Punto2
             {
                 hiddenWord[i] = '_';
             }
+
+            while ()
+
+            {
+                Console.WriteLine();
+                Console.WriteLine("Palabra: " + new string(hiddenWord));
+
+                bool letterfound = false;
+                for (int i = 0; i < randomWord.Length; i++)
+                {
+                
+                    if (randomWord[i] == letter) 
+                    {
+                        hiddenWord[i] = letter;
+                        letterfound = true;
+                    }
+                }
+            }
         }
 
         static void GuessWord()
         {
+            Console.WriteLine("Ingresa una letra");
+            char letter = Console.ReadKey().KeyChar;
+            Console.WriteLine();
 
         }
 
