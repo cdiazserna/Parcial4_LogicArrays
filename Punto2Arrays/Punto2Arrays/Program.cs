@@ -23,7 +23,18 @@ namespace Punto2Arrays
                 Console.WriteLine("Enter a letter:");
                 char letter = char.ToLower(Console.ReadKey().KeyChar);
 
+                bool letterFound = updtgessedLetters(letter, lettersWord, lettersGessed);
 
+
+
+
+
+                static string selectrandomWord(string[] words)
+                {
+                    Random random = new Random();
+                    int indiceAleatorio = random.Next(words.Length);
+                    return words[RandomIndex];
+                }
 
                 static char[] InitgessedLetters(int longitud)
                 {
@@ -34,8 +45,20 @@ namespace Punto2Arrays
                     }
                     return gessedLetters;
                 }
-              
+                static bool updtgessedLetters(char letter, char[] lettersWord, char[] lettersGessed)
+                {
+                    bool letterFound = false;
+                    for (int i = 0; i < lettersWord.Length; i++)
+                    {
+                        if (lettersWord[i] == letter)
+                        {
+                            lettersGessed[i] = letter;
+                            letterFound = true;
+                        }
+                    }
+                    return letterFound;
                 }
+            }
             }
         }
     
