@@ -8,7 +8,7 @@ namespace Punto2Arrays
         {
             string[] listWords = { "rojo", "verde", "amarillo", "azul", "violeta", "naranja", "marron", "negro", "lila", "rosado" };
             Random random = new Random();
-            string randomWord = listWords[random.Next(listWords.Length)];
+            char[] randomWord = listWords[random.Next(listWords.Length)];
             // almacenamos la paralbra en uun array
             char[] gessedLetters = InitgessedLetters(randomWord.Length);//tenemos que definir un metodo para inicializar 
 
@@ -23,10 +23,10 @@ namespace Punto2Arrays
                 Console.WriteLine("Enter a letter:");
                 char letter = char.ToLower(Console.ReadKey().KeyChar);
 
-                bool letterFound = updtgessedLetters(letter, lettersWord, lettersGessed);
+                bool letterFound = updtgessedLetters(letter,randomWord, gessedLetters);
                 if (letterFound)
                 {
-                    if (areEqual(lettersGessed, lettersWord))
+                    if (areEqual(gessedLetters, randomWord))
                     {
                         Console.WriteLine("\n¡winner!");
                         return;
