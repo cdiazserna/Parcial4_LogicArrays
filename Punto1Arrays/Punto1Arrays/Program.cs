@@ -53,7 +53,7 @@ namespace Punto1Arrays
                 
                 Console.WriteLine(stuffed[i]);
             }
-            Console.WriteLine("si deseas introducir otro numero marca 1 o cualquiera para finalizar");
+            Console.WriteLine("\n Si deseas introducir otro numero marca 1 o cualquiera para finalizar");
             stwh= Convert.ToInt32(Console.ReadLine());
             Console.Clear();
         }
