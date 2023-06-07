@@ -9,7 +9,7 @@ namespace Punto2Arrays
             string[] listWords = { "Perro", "Gato", "Cocodrilo", "Guepardo", "Gorilla", "Delfin", "Murcielago", "Mapache", "Escarabajo", "Jirafa" };
             Random random = new Random();
 
-            string randomWord = listWords[random.Next(listWords.Length)];
+            string randomWord = listWords[random.Next(listWords.Length)]; 
 
         }
     }
