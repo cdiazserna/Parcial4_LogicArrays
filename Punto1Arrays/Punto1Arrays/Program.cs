@@ -9,7 +9,7 @@ namespace Punto1Arrays
 
             bool continu=true;
             // definimos la variable boleana para activar la condicion, la inicializamos en true
-            while (continu) ;
+            while (continu) 
             {
 
                 Console.WriteLine("Ingrese el tamaño del array: ");//pedimos los datos al usuario
