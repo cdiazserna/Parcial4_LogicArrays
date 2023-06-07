@@ -15,6 +15,7 @@ namespace Punto_2
             int vidas = 5;
             //string ramdomWord = listWord[ramdom.Next(listWord.Length)];
             string ramdomWord = "aabala";
+            string letrasAcertadas = "";
             char[] palabraSecreta = new char[ramdomWord.Length];
             foreach (char c in  ramdomWord)
             {
@@ -35,12 +36,15 @@ namespace Punto_2
                 {
                     Console.WriteLine("No ha acertado\n");
                     vidas = vidas - 1;
+                    MostrarPalabraSecreta(ramdomWord, letrasAcertadas);
                 }
                 else
                 {
                     Console.WriteLine("Ha acertado\n");
                     aciertos++;
                     pos = pos - adivinado;
+                    letrasAcertadas += respuesta;
+                    MostrarPalabraSecreta(ramdomWord, letrasAcertadas);
 
                     if (pos == 0)
                     {
@@ -76,31 +80,28 @@ namespace Punto_2
                 if (c == attempt)
                 {
                     cont = cont + 1;
-                    eliminar(list, c);
                 }
             }
             return cont;
         }
 
 
-        static void eliminar(char[] list, char attempt)
+        static void MostrarPalabraSecreta(string palabraSecreta, string letrasIntentadas)
         {
-            int j = 0;
-
-            for (int i = 0; i < list.Length; i++)
+            foreach (char letra in palabraSecreta)
             {
-                if (list[i] != attempt)
+                if (letrasIntentadas.Contains(letra))
                 {
-                    list[j] = list[i];
-                    j++;
+                    Console.Write(letra + " ");
+                }
+                else
+                {
+                    Console.Write("_ ");
                 }
             }
 
-            // Rellenar el resto del array con espacios en blanco
-            for (int i = j; i < list.Length; i++)
-            {
-                list[i] = ' ';
-            }
+            Console.WriteLine();
         }
+
     }
 }
