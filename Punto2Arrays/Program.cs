@@ -8,7 +8,7 @@ namespace Punto2Arrays
         {
             string[] listWords =
             {
-                "tvs, bmw, bajaj, honda, suzuki, akt, hero, victory, yamaha, royalenfild, kawasaki"
+                "tvs, bmw, bajaj, honda, suzuki, akt, hero, yamaha, royalenfild, kawasaki"
             };
             Random random= new Random();
 
