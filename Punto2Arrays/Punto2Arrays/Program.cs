@@ -10,7 +10,7 @@ namespace Punto2Arrays
             Random random = new Random();
             string randomWord = listWords[random.Next(listWords.Length)];
             // almacenamos la paralbra en uun array
-            char[] randomWord = ObtenerLetrasPalabra(palabraAleatoria);
+          // char[] 
 
             // utilizamos while como condicional
             while (true)
