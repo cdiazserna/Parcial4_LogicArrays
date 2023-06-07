@@ -13,8 +13,7 @@ namespace Punto_2
             string[] listWord = { "superman", "batman", "aquaman", "deadpool", "flash", "daredevil", "hulk", "thor", "blackWidow", "wolverin" };
             Random ramdom = new Random();
             int vidas = 5;
-            //string ramdomWord = listWord[ramdom.Next(listWord.Length)];
-            string ramdomWord = "aabala";
+            string ramdomWord = listWord[ramdom.Next(listWord.Length)];
             string letrasAcertadas = "";
             char[] palabraSecreta = new char[ramdomWord.Length];
             foreach (char c in  ramdomWord)
