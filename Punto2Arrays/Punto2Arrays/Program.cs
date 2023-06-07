@@ -9,8 +9,11 @@ namespace Punto2Arrays
         static int cartuchosRestantes;
         static void Main(string[] arg)
         {
-            
-            Console.WriteLine("¡Bienvenido al juego del ahorcado!");
+            Console.WriteLine("************************************");
+            Console.WriteLine("*¡Bienvenido al juego del ahorcado!*");
+            Console.WriteLine("************************************");
+            Console.WriteLine();
+
             bool jugarDeNuevo = true;
             while (jugarDeNuevo)
             {
@@ -30,6 +33,7 @@ namespace Punto2Arrays
             Random random = new Random();
             int randomWord = random.Next(0, listWords.Length);
             palabraAleatoria = listWords[randomWord].ToCharArray();
+
         }
 
         static void InicializarJuego()
@@ -44,7 +48,9 @@ namespace Punto2Arrays
             while (cartuchosRestantes > 0 && Array.IndexOf(letrasDescubiertas, false) != -1)
             {
                 Console.WriteLine("Palabra: " + ObtenerEstadoPalabra(letrasDescubiertas));
+                Console.WriteLine();
                 Console.WriteLine("Te quedan " + cartuchosRestantes + " cartuchos para adivinar la palabra.");
+                Console.WriteLine();
                 Console.Write("Ingresa una letra: ");
                 char letra = Console.ReadKey().KeyChar;
                 Console.WriteLine();
