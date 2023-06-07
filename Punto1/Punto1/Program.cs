@@ -56,7 +56,7 @@ namespace Punto1
             }
 
             Console.WriteLine();
-            Console.ReadKey(); 
+  
         }
     }
 }
