@@ -7,18 +7,61 @@ namespace Punto2Arrays
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Bienvenidos al Ahorcadito");
-            Console.WriteLine(" Basado en Marca de Relojes");
-            string[]listword = { "rolex", "yess", "cassio", "ap", "hublot", "tagheuer" };
-            Random random= new Random();
-            string randomword = listword[random.Next(listword.Length)];
-            char[]letters=new char[randomword.Length];
-            for (int i = 0; i < letters.Length; i++)
+            int attempts = 5,sthw=1,swth=1;
+            char letter;
+            string rest;
+            while (swth == 1)
             {
-                letters[i] = randomword[i];
-                Console.WriteLine(letters[i]);
-            }
+                Console.WriteLine("  ****************  Bienvenidos al Ahorcadito   **********************\n");
+                Console.WriteLine(" \nBasado en Marca de Relojes\n");
+                string[] listword = { "rolex", "yess", "cassio", "ap", "hublot", "tagheuer" };
+                Random random = new Random();
+                string randomword = listword[random.Next(listword.Length)];
+                char[] letters = new char[randomword.Length];
+                for (int i = 0; i < letters.Length; i++)
+                {
+                    letters[i] = randomword[i];
 
+                }
+                Console.WriteLine("\ntines 5 intentos antes de ser ahorcado\n");
+
+                while (sthw == 1)
+                {
+                    Console.WriteLine("digita una letra");
+                    letter = Convert.ToChar(Console.ReadLine());
+                    for (int i = 0; i < letters.Length; i++)
+                    {
+                        if (letter == letters[i])
+                        {
+                            Console.WriteLine(string.Format("la letra : {0} , es parte de la palabra en la posicion {1}", letter, i));
+                        }
+                        else
+                        {
+                            Console.WriteLine(string.Format("la letra : {0} ,no es parte de la palabra en la posicion {1}", letter, i));
+
+                        }
+
+                    }
+                    Console.WriteLine("si sabe cual es digita");
+                    rest = Console.ReadLine();
+                    if (rest == randomword)
+                    {
+                        Console.WriteLine(" has ganado ");
+                        sthw = 0;
+                    }
+                    else Console.WriteLine(" no era, sigue intentando");
+
+                    attempts--;
+                    if (attempts == 0)
+                    {
+                        sthw = 0;
+                        Console.WriteLine(" haz perdido");
+                    }
+                }
+                Console.WriteLine(" si deseas jugar otra vez marca 1 o cualquiera para salir");
+                swth=Convert.ToInt32(Console.ReadLine());
+            }
+            
         }
     }
 }
