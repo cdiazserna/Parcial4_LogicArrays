@@ -9,8 +9,14 @@ namespace Punto_2
         {
             string[] listWord = { "Superman", "Batman", "Spider-Man", "Wonder Woman", "Iron-Man", "Captain-America", "Hulk", "Thor", "BlackWidow", "Wolverin" };
             Random ramdom = new Random();
-
+            int vidas = 5;
             string ramdomWord = listWord[ramdom.Next(listWord.Length)];
+            int pos = ramdomWord.Length;
+            Console.WriteLine("La palabra elejida tiene: " + pos + "posiciones");
+            Console.WriteLine("Tiene: " + vidas + "vidas");
+            Console.WriteLine("Ingrese una letra: ");
+            char respuesta = Convert.ToChar(Console.ReadLine()); 
+            int adivinado = validarPalabraAleatoria(ramdomWord, respuesta);
         }
 
 
@@ -23,10 +29,8 @@ namespace Punto_2
                 {
                     cont = cont + 1;
                 }
-
-
-            return cont;
             }
+            return cont;
         }
     }
 }
