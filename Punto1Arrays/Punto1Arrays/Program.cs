@@ -27,9 +27,10 @@ namespace Punto1Arrays
                 string opcion = Console.ReadLine().ToUpper();
 
                 if (opcion == "N")
+                {
                    continu = false;
                 }
-               
+                
 
 
                 Console.Clear(); 

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Punto2Arrays", "Punto2Arrays\Punto2Arrays.csproj", "{59650984-2CD3-496B-9F21-2CED5A1B721E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59650984-2CD3-496B-9F21-2CED5A1B721E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59650984-2CD3-496B-9F21-2CED5A1B721E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59650984-2CD3-496B-9F21-2CED5A1B721E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59650984-2CD3-496B-9F21-2CED5A1B721E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7ED17333-EC7B-4637-8F4D-B82CA3669E30}
+	EndGlobalSection
+EndGlobal
